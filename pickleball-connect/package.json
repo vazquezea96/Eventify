@@ -2,15 +2,18 @@
   "name": "pickleball-connect",
   "private": true,
   "version": "0.0.0",
-  
   "scripts": {
-    "backend": "nodemon backend/server.js",
+    "backend": "nodemon backend/server.js -L",
     "frontend": "vite",
     "build": "vite build",
     "lint": "eslint frontend --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1"
@@ -24,6 +27,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "nodemon": "^3.1.0",
     "postcss": "^8.4.35",
     "prettier": "3.2.5",
     "tailwindcss": "^3.4.1",
