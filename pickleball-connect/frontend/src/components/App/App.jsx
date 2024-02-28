@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import About from "../About/About";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import { Link } from "react-router-dom";
+import Card from "../Card/Card";
+import Gallery from "../Gallery/Gallery";
 import "./App.css";
 
 export default function App() {
   // Store API data here
-  const [eventos, setEventos] = useState([])
+  const [eventos, setEventos] = useState([]);
 
-  // Query the API on component mount
+  // Define an async function to JSONify the query response
+  async function getData(url) {
+    const res = await fetch(url);
+    const { events } = await res.json();
+    setEventos(events.concat(events));
+  }
+
+  // Call the async function on component mount
   useEffect(() => {
-    // Define an async function to JSONify the query response
-    async function getData() {
-      const res = await fetch(
-        "https://api.seatgeek.com/2/events?client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
-      );
-      const { events } = await res.json();
-      setEventos(events)
-    }
-
-    // Call the async function
-    getData();
+    getData(
+      "https://api.seatgeek.com/2/events?client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
+    );
   }, []);
 
   return (
@@ -35,8 +34,8 @@ export default function App() {
           <h2 className="text-white md:text-lg sm:text-md">About Us</h2>
         </Link>
       </nav>
-      <p>You have {eventos.length} events</p>
-      {eventos[0].title}
+
+      <Gallery eventos={eventos} refreshQueue={getData} />
     </>
   );
 }
