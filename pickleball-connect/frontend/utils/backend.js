@@ -1,5 +1,17 @@
 import axios from "axios";
 
+/* AUTHENTICATION REQUESTS
+------------------------------------------------------------------------ */
+export async function signUp(user) {
+  const { data } = await axios.post("/api/users/signup", user);
+  return data;
+}
+
+export async function logIn(user) {
+  const { data } = await axios.post("/api/users/login", user);
+  return data;
+}
+
 // This file stores all requests we make to the backend. These requests will hit the backend routes
 // that then perform CRUD operations.
 

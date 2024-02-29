@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Card from "../Card/Card";
-import Gallery from "../Gallery/Gallery";
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
+import About from "../About/About";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import AuthFormPage from "../AuthFormPage";
 import "./App.css";
 
 export default function App() {
   // Store API data here
   const [eventos, setEventos] = useState([]);
+  const [loginStatus, setLoginStatus] = useState(false);
 
   // Define an async function to JSONify the query response
   async function getData(url) {
@@ -20,7 +23,36 @@ export default function App() {
     getData(
       "https://api.seatgeek.com/2/events?client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
     );
+    if (localStorage.getItem("userToken")) {
+      setLoginStatus(true);
+    }
   }, []);
+
+  // Constionally render the login/singup links and the logout button
+  let authLink = (
+    <div className="flex lg:gap-5 md:gap-4 sm:gap-3 gap-2">
+      <Link to="/auth/signup">
+        <h2 className="text-white md:text-lg sm:text-md">Sign Up</h2>
+      </Link>
+      <Link to="/auth/login">
+        <h2 className="text-white md:text-lg sm:text-md">Log In</h2>
+      </Link>
+    </div>
+  );
+
+  if (loginStatus) {
+    authLink = (
+      <button
+        className="text-white md:text-lg sm:text-md"
+        onClick={() => {
+          localStorage.clear();
+          setLoginStatus(false);
+        }}
+      >
+        Log Out
+      </button>
+    );
+  }
 
   return (
     <>
@@ -33,9 +65,21 @@ export default function App() {
         <Link to="/about">
           <h2 className="text-white md:text-lg sm:text-md">About Us</h2>
         </Link>
+        {authLink}
       </nav>
 
-      <Gallery eventos={eventos} refreshQueue={getData} />
+      <Routes>
+        <Route
+          path="/"
+          element={<HomePage eventos={eventos} refreshQueue={getData} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/*" element={<NotFoundPage />} />
+        <Route
+          path="/auth/:formType"
+          element={<AuthFormPage setLoginStatus={setLoginStatus} />}
+        />
+      </Routes>
     </>
   );
 }
