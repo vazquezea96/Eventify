@@ -1,8 +1,8 @@
 ## Project Name & Pitch
 
-Pickleball Connect
+Eventify
 
-An application used to find pickleball courts within your area and connect with fellow pickleball enthusist, built with React, Vite, JavaScript, NodeJS, ExpressJS, MongoDB and Tailwind CSS.
+An application used to find events/concerts within your area and connect with fellow event enthusist, built with React, Vite, JavaScript, NodeJS, ExpressJS, MongoDB and Tailwind CSS. Utilzing the Seat Geek API.
 
 ## Project Status
 
