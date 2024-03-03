@@ -4,24 +4,26 @@ import HomePage from "../HomePage/HomePage";
 import About from "../About/About";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import AuthFormPage from "../AuthFormPage";
+import DetailsPage from "../DetailsPage/DetailsPage";
 import "./App.css";
 
 export default function App() {
   // Store API data here
   const [eventos, setEventos] = useState([]);
   const [loginStatus, setLoginStatus] = useState(false);
+  const [detailsData, setDetailData] = useState({});
 
   // Define an async function to JSONify the query response
   async function getData(url) {
     const res = await fetch(url);
-    const { events } = await res.json();
-    setEventos(events.concat(events));
+    const { events } = await res.json(); // destructure the JSON response
+    setEventos(events);
   }
 
   // Call the async function on component mount
   useEffect(() => {
     getData(
-      "https://api.seatgeek.com/2/events?client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
+      "https://api.seatgeek.com/2/events?per_page=25&page=3&taxonomies.name=concert&geoip=true&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
     );
     if (localStorage.getItem("userToken")) {
       setLoginStatus(true);
@@ -71,10 +73,21 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={<HomePage eventos={eventos} refreshQueue={getData} />}
+          element={
+            <HomePage
+              eventos={eventos}
+              refreshQueue={getData}
+              updateDetails={setDetailData}
+              setEventos={setEventos}
+            />
+          }
         />
         <Route path="/about" element={<About />} />
         <Route path="/*" element={<NotFoundPage />} />
+        <Route
+          path="/details/:id"
+          element={<DetailsPage evento={detailsData} />}
+        />
         <Route
           path="/auth/:formType"
           element={<AuthFormPage setLoginStatus={setLoginStatus} />}

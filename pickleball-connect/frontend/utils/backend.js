@@ -15,21 +15,21 @@ export async function logIn(user) {
 // This file stores all requests we make to the backend. These requests will hit the backend routes
 // that then perform CRUD operations.
 
-export async function getCourts(courtId) {
-  const { data } = await axios.get(`/api/courts/${courtId}`);
+export async function getComments(eventId) {
+  const { data } = await axios.get(`/api/comments/${eventId}`);
   return data;
 }
 
-export async function postCourt(court) {
-  const { data } = await axios.post("/api/courts", comment);
+export async function postComment(comment) {
+  const { data } = await axios.post("/api/comments", comment);
   return data;
 }
-export async function updateCourt(court, id) {
-  const { data } = await axios.put(`/api/courts/${id}`, comment);
+export async function updateComment(comment, id) {
+  const { data } = await axios.put(`/api/comments/${id}`, comment);
   return data;
 }
 
-export async function deleteCourt(id) {
-  const { data } = await axios.delete(`/api/courts/${id}`);
+export async function deleteComment(id) {
+  const { data } = await axios.delete(`/api/comments/${id}`);
   return data;
 }
