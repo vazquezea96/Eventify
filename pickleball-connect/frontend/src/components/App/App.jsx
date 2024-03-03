@@ -23,7 +23,7 @@ export default function App() {
   // Call the async function on component mount
   useEffect(() => {
     getData(
-      "https://api.seatgeek.com/2/events?per_page=25&page=3&taxonomies.name=concert&geoip=true&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
+      "https://api.seatgeek.com/2/events?per_page=10&page=3&taxonomies.name=concert&geoip=true&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
     );
     if (localStorage.getItem("userToken")) {
       setLoginStatus(true);
@@ -69,6 +69,15 @@ export default function App() {
         </Link>
         {authLink}
       </nav>
+
+      {/* SHOW user name */}
+      <div className="h-16">
+        {loginStatus && (
+          <h2 className="text-white text-center">
+            Welcome, {localStorage.getItem("email")}
+          </h2>
+        )}
+      </div>
 
       <Routes>
         <Route

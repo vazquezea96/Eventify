@@ -24,12 +24,13 @@ export default function DetailsPage(props) {
   }, []);
 
   return (
-    <div className="w-4/5 mx-auto min-h-[300px] border-2 border-black rounded-lg">
-      <h1>evento.name</h1>
-      <br />
-      <p>Placeholder</p>
-
-      <CommentSection eventId={event.id} />
-    </div>
+    <>
+      <div className="w-4/5 mx-auto min-h-[300px] border-2 border-black rounded-lg">
+        <h1>evento.name</h1>
+        <br />
+        <p>Placeholder</p>
+      </div>
+      <CommentSection eventId={evento.id} />
+    </>
   );
 }
