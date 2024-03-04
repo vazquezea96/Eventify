@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Gallery from "../Gallery/Gallery";
+import Recommended from "../Recommended/Recommended";
+import Footer from "../Footer/Footer";
 
 export default function HomePage({
   eventos,
@@ -41,12 +43,15 @@ export default function HomePage({
         </form>
       </div>
 
+
       <Gallery
         query={query}
         eventos={eventos}
         refreshQueue={refreshQueue}
         updateDetails={updateDetails}
       />
+
+      <Footer />
     </>
   );
 }

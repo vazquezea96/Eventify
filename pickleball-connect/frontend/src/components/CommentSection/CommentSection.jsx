@@ -46,7 +46,7 @@ export default function commentSection({ eventId }) {
     // close the form
     setShowCreateForm(false);
     // create the comment in the backend
-    postComment({ ...createFormData, artworkId: eventId }).then(() =>
+    postComment({ ...createFormData, eventId: eventId }).then(() =>
       refreshComments(),
     );
   }

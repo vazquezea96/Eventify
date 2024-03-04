@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Card from "../Card/Card";
 
-export default function Gallery({ eventos, refreshQueue, updateDetails, query}) {
+export default function Gallery({ eventos, refreshQueue, query }) {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Update the current page so the gallery content changes,
   // modify how many artworks appear in the artworks array
   function getNextPage() {
     refreshQueue(
-      `https://api.seatgeek.com/2/events?q=${query}&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1`,
+      `https://api.seatgeek.com/2/events?per_page=5&page=5&q=${query}&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1`,
     );
     setCurrentPage(currentPage + 1);
   }
@@ -24,8 +24,8 @@ export default function Gallery({ eventos, refreshQueue, updateDetails, query}) 
   // Conditionally change the value of the gallery content
   if (eventos.length > 0) {
     // Determine the # events that correspond to the currentPage
-    const startIndex = (currentPage - 1) * 20;
-    const endIndex = startIndex + 20;
+    const startIndex = (currentPage - 1) * 5;
+    const endIndex = startIndex + 5;
     // Slice the 20 corresponding eventos and create Cards for them
     galleryContent = eventos
       .slice(startIndex, endIndex)

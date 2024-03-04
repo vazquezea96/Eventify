@@ -12,7 +12,8 @@ const db = require("./models");
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const usersCtrl = require('./controllers/users')
-
+const commentsCtrl = require('./controllers/comment')
+const wishlistCtrl = require('./controllers/wishlist')
 
 /* Create the Express app
 ---------------------------------------------------------- */
@@ -27,10 +28,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 /* Mount routes
----------------------------------------------------------- */
-// This tells our app to look at the `controllers/comments.js` file
+--------------------------------------------------------------- */
+// This tells our app to look at the `controllers/comments.js` file 
 // to handle all routes that begin with `localhost:3000/api/comments`
+app.use('/api/comments', commentsCtrl)
+
+// This tells our app to look at the `controllers/users.js` file 
+// to handle all routes that begin with `localhost:3000/api/favorites`
+app.use('/api/favorites', wishlistCtrl)
+
+// This tells our app to look at the `controllers/users.js` file 
+// to handle all routes that begin with `localhost:3000/api/users`
 app.use('/api/users', usersCtrl)
+
 
 /* Tell the app to listen on the specified port
 ---------------------------------------------------------- */

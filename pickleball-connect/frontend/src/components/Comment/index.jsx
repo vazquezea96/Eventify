@@ -36,7 +36,7 @@ export default function Comment({ data, refreshComments }) {
     return (
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right"
+        className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 mx-auto text-right"
       >
         <input
           name="name"
@@ -75,7 +75,7 @@ export default function Comment({ data, refreshComments }) {
     //  Default JSX of each comment
   } else {
     return (
-      <div className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto">
+      <div className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 mx-auto">
         <p className="font-bold">{data.name}</p>
         <p className="my-2">{data.content}</p>
         <div className="flex justify-end">
