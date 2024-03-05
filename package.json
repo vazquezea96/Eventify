@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "backend": "nodemon backend/server.js -L",
     "frontend": "vite",
+    "backend": "nodemon backend/server.js -L",
    "start":  "vite build && node backend/server.js"
   },
   "dependencies": {
