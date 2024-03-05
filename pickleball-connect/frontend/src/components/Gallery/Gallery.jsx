@@ -24,8 +24,8 @@ export default function Gallery({ eventos, refreshQueue, query }) {
   // Conditionally change the value of the gallery content
   if (eventos.length > 0) {
     // Determine the # events that correspond to the currentPage
-    const startIndex = (currentPage - 1) * 5;
-    const endIndex = startIndex + 5;
+    const startIndex = (currentPage - 1) * 10;
+    const endIndex = startIndex + 10;
     // Slice the 20 corresponding eventos and create Cards for them
     galleryContent = eventos
       .slice(startIndex, endIndex)

@@ -5,9 +5,7 @@
   "scripts": {
     "backend": "nodemon backend/server.js -L",
     "frontend": "vite",
-    "build": "vite build",
-    "lint": "eslint frontend --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+   "start":  "vite build && node backend/server.js"
   },
   "dependencies": {
     "axios": "^1.6.7",
