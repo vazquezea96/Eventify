@@ -25,7 +25,7 @@ export default function DetailsPage(props) {
 
   return (
     <>
-      <div className="w-4/5 mx-auto min-h-[300px] border-2 border-black rounded-lg">
+      <div className="text-white w-4/5 mx-auto min-h-[300px]">
         <h1>{evento ? evento.title : null}</h1>
         <h2>{evento?.performers ? evento.performers[0].name : null}</h2>
         <br />

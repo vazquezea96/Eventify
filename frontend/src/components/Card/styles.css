@@ -3,22 +3,3 @@
     opacity: 0;
     height: calc(100% - 44px);
 }
-
-figure:hover .card-overlay {
-    display: flex !important;
-    animation: fade-in 150ms ease-in-out 50ms forwards;
-}
-
-figure:hover .card-image {
-    filter: blur(2px);
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 0.4;
-    }
-}

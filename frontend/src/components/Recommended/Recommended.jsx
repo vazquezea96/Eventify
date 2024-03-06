@@ -18,7 +18,7 @@ export default function Recommended({ eventos }) {
 
   return (
     <>
-      <h1 className="text-6xl text-center">Recommended</h1>
+      <h1 className="text-6xl text-center text-white">Recommended Artist</h1>
 
       <div className="w-4/5 mt-10 mx-auto xl:columns-4 lg:columns-3 md:columns-2">
         {recommendation.length > 0 ? (

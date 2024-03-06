@@ -19,7 +19,7 @@ export default function HomePage({
     setEventos([]);
     // query the API with the user's input & update the gallery data
     refreshQueue(
-      `https://api.seatgeek.com/2/events?q=${query}&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1`,
+      `https://api.seatgeek.com/2/events?per_page=10&page=1&q=${query}&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1`,
     );
   }
 
@@ -36,7 +36,7 @@ export default function HomePage({
           />
           <button
             type="submit"
-            className="box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-700 rounded-lg font-semibold hover:bg-gray-700 hover:opacity-70 transition-all duration-200 ease-in-out"
+            className="text-white box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-700 rounded-lg font-semibold hover:bg-gray-700 hover:opacity-70 transition-all duration-200 ease-in-out"
           >
             Search
           </button>

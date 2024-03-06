@@ -23,7 +23,7 @@ export default function App() {
   // Call the async function on component mount
   useEffect(() => {
     getData(
-      "https://api.seatgeek.com/2/events?per_page=10&page=3&taxonomies.name=concert&geoip=true&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
+      "https://api.seatgeek.com/2/events?per_page=10&page=1&taxonomies.name=concert&geoip=true&client_id=MTQyMjc2OTd8MTcwOTEwNTkyNi4xODg0MjU1",
     );
     if (localStorage.getItem("userToken")) {
       setLoginStatus(true);
