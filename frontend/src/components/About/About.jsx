@@ -39,7 +39,7 @@ export default function AboutPage() {
       <br />
 
       <h3 className="font-bold text-white">Our Mission </h3>
-      <p>
+      <p className="text-white">
         We believe that life is better when youre surrounded by the energy of a
         live crowd. Our mission is to connect you with unforgettable
         experiences, whether youre cheering for your favorite team, dancing to
@@ -51,7 +51,7 @@ export default function AboutPage() {
 
       <p className="font-bold text-white">Meet Our Team:</p>
       <ul>
-        <li> Eddie </li>
+        <li className="text-white"> Eddie </li>
       </ul>
 
       <br />
