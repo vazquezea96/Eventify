@@ -1,5 +1,6 @@
 ## Embedded Screenshot of App:
 
+![home-screen](https://github.com/vazquezea96/Eventify/assets/80133388/418e2ecf-b928-42e2-9bee-88f9f9abede2)
 
 ## Project Name & Technologies:
 
