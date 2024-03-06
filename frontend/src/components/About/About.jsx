@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 export default function AboutPage() {
   return (
     <>
-      <h2 className="font-bold">Welcome to Eventify! </h2>
+      <h2 className="font-bold text-white">Welcome to Eventify! </h2>
 
       <p className="text-white">
         Our Story At Eventify, were passionate about bringing people together

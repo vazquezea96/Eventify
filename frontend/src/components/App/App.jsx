@@ -74,7 +74,7 @@ export default function App() {
       <div className="h-16">
         {loginStatus && (
           <h2 className="text-white text-center">
-            Welcome, {localStorage.getItem("email")}
+            
           </h2>
         )}
       </div>
