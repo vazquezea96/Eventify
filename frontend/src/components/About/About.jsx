@@ -6,7 +6,7 @@ export default function AboutPage() {
     <>
       <h2 className="font-bold">Welcome to Eventify! </h2>
 
-      <p>
+      <p className="text-white">
         Our Story At Eventify, were passionate about bringing people together
         through live events. Our journey began when Eddie attended their first
         concert and felt the magic of live music. Inspired by that experience,
@@ -17,9 +17,9 @@ export default function AboutPage() {
       <br />
       <br />
 
-      <h3 className="font-bold">What We Offer:</h3>
-      <ul>
-        <li>
+      <h3 className="font-bold text-white">What We Offer:</h3>
+      <ul className="text-white">
+        <li className="text-white">
           Event Discovery: We curate a wide range of events, from sports games
           and concerts to theater performances and festivals. Whether youre a
           die-hard sports fan or a music enthusiast, weve got something for you.
@@ -38,7 +38,7 @@ export default function AboutPage() {
       <br />
       <br />
 
-      <h3 className="font-bold">Our Mission </h3>
+      <h3 className="font-bold text-white">Our Mission </h3>
       <p>
         We believe that life is better when youre surrounded by the energy of a
         live crowd. Our mission is to connect you with unforgettable
@@ -49,7 +49,7 @@ export default function AboutPage() {
       <br />
       <br />
 
-      <p className="font-bold">Meet Our Team:</p>
+      <p className="font-bold text-white">Meet Our Team:</p>
       <ul>
         <li> Eddie </li>
       </ul>
@@ -57,7 +57,7 @@ export default function AboutPage() {
       <br />
   
 
-      <p className="mb-10">
+      <p className="mb-10 text-white">
         Join the Eventify Community Were more than just a ticketing platform;
         were a community of event lovers. Connect with us on social media, sign
         up for our newsletter, and be the first to know about upcoming events,
