@@ -53,7 +53,7 @@ export default function commentSection({ eventId }) {
 
   // conditionally render comments
   let commentElements = [
-    <p key="0" className="text-center">
+    <p key="0" className="text-center text-white">
       No comments yet. Be the first to comment!
     </p>,
   ];
